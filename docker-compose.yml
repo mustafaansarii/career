@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  career-db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: careeruser
+      POSTGRES_PASSWORD: careerpassword
+      POSTGRES_DB: careerdb
+    ports:
+      - "5433:5432"
+    volumes:
+      - career_pgdata:/var/lib/postgresql/data
+
+volumes:
+  career_pgdata:
+
