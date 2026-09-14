@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
     const application = await prisma.jobApplication.create({
       data: {
-        userId: userId || null,
+        userId: userId ? String(userId) : null,
         name,
         email,
         phone,
