@@ -33,7 +33,7 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { title, department, location, description, formConfig } = body;
+    const { title, department, location, jobType, description, formConfig } = body;
 
     if (!title || !department || !location || !description) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -44,6 +44,7 @@ export async function POST(req: Request) {
         title,
         department,
         location,
+        jobType: jobType || 'Full-Time',
         description,
         formConfig: formConfig || DEFAULT_FORM_CONFIG,
       }

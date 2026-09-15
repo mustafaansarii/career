@@ -9,7 +9,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     const body = await req.json();
     
     // Only extract the fields we allow to update
-    const { title, department, location, description, formConfig, status } = body;
+    const { title, department, location, jobType, description, formConfig, status } = body;
 
     const job = await prisma.jobOpening.update({
       where: { id },
@@ -17,6 +17,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
         ...(title && { title }),
         ...(department && { department }),
         ...(location && { location }),
+        ...(jobType && { jobType }),
         ...(description && { description }),
         ...(formConfig && { formConfig }),
         ...(status && { status }),

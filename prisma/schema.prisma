@@ -12,6 +12,7 @@ model JobOpening {
   title        String
   department   String
   location     String
+  jobType      String           @default("Full-Time")
   description  String           @db.Text
   formConfig   Json             
   status       String           @default("OPEN")

@@ -32,7 +32,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ id: stri
       <div className="border-b border-zinc-200 pb-8 mb-12">
         <h1 className="text-3xl font-medium text-zinc-900 mb-4">{job.title}</h1>
         <div className="text-sm font-semibold tracking-wide text-zinc-500 uppercase">
-          {job.location} <span className="mx-2">/</span> {job.department} <span className="mx-2">/</span> Full-Time
+          {job.location} <span className="mx-2">/</span> {job.department} <span className="mx-2">/</span> {job.jobType}
         </div>
       </div>
 

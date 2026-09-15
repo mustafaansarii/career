@@ -45,7 +45,7 @@ export default async function JobsPage() {
                           {job.title}
                         </Link>
                         <div className="text-xs font-semibold tracking-widest text-zinc-400 mt-2 uppercase">
-                          {job.location}
+                          {job.location} <span className="mx-2">•</span> {job.jobType}
                         </div>
                       </div>
                       <Link 

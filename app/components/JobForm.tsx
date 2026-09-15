@@ -16,6 +16,7 @@ type JobOpening = {
   title: string;
   department: string;
   location: string;
+  jobType: string;
   description: string;
   formConfig: FieldConfig[];
   status: string;
@@ -36,6 +37,7 @@ export default function JobForm({ initialData }: { initialData?: JobOpening }) {
     title: initialData?.title || '',
     department: initialData?.department || '',
     location: initialData?.location || '',
+    jobType: initialData?.jobType || 'Full-Time',
     description: initialData?.description || '',
     status: initialData?.status || 'OPEN',
     formConfig: initialData?.formConfig?.length ? initialData.formConfig : DEFAULT_FIELDS,
@@ -98,22 +100,31 @@ export default function JobForm({ initialData }: { initialData?: JobOpening }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label className="text-sm font-medium">Job Title</label>
-          <input required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} className="w-full px-3 py-2 border rounded-lg" placeholder="e.g. Senior Software Engineer" />
+          <input required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} className="w-full px-3 py-2 border rounded-lg bg-zinc-50 focus:bg-white transition-colors" placeholder="e.g. Senior Software Engineer" />
         </div>
         <div className="space-y-2">
           <label className="text-sm font-medium">Status</label>
-          <select value={formData.status} onChange={e => setFormData({...formData, status: e.target.value})} className="w-full px-3 py-2 border rounded-lg">
+          <select value={formData.status} onChange={e => setFormData({...formData, status: e.target.value})} className="w-full px-3 py-2 border rounded-lg bg-zinc-50 focus:bg-white transition-colors">
             <option value="OPEN">OPEN</option>
             <option value="CLOSED">CLOSED</option>
           </select>
         </div>
         <div className="space-y-2">
           <label className="text-sm font-medium">Department / Function</label>
-          <input required value={formData.department} onChange={e => setFormData({...formData, department: e.target.value})} className="w-full px-3 py-2 border rounded-lg" placeholder="e.g. Engineering" />
+          <input required value={formData.department} onChange={e => setFormData({...formData, department: e.target.value})} className="w-full px-3 py-2 border rounded-lg bg-zinc-50 focus:bg-white transition-colors" placeholder="e.g. Engineering" />
         </div>
         <div className="space-y-2">
           <label className="text-sm font-medium">Location</label>
-          <input required value={formData.location} onChange={e => setFormData({...formData, location: e.target.value})} className="w-full px-3 py-2 border rounded-lg" placeholder="e.g. Remote" />
+          <input required value={formData.location} onChange={e => setFormData({...formData, location: e.target.value})} className="w-full px-3 py-2 border rounded-lg bg-zinc-50 focus:bg-white transition-colors" placeholder="e.g. Remote" />
+        </div>
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Job Type</label>
+          <select value={formData.jobType} onChange={e => setFormData({...formData, jobType: e.target.value})} className="w-full px-3 py-2 border rounded-lg bg-zinc-50 focus:bg-white transition-colors">
+            <option value="Full-Time">Full-Time</option>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Contract">Contract</option>
+            <option value="Internship">Internship</option>
+          </select>
         </div>
       </div>
 
