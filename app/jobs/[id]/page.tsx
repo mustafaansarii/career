@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { PrismaClient } from '@prisma/client';
 import { notFound } from 'next/navigation';
-import { Briefcase, MapPin, ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 const prisma = new PrismaClient();
@@ -20,37 +19,35 @@ export default async function JobDetailsPage({ params }: { params: Promise<{ id:
   }
 
   return (
-    <div className="max-w-3xl mx-auto w-full space-y-8">
-      <Link href="/" className="inline-flex items-center gap-2 text-sm text-blue-600 hover:underline">
-        <ArrowLeft className="h-4 w-4" /> Back to all jobs
-      </Link>
-
-      <div className="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 p-8 rounded-2xl">
-        <h1 className="text-3xl font-bold mb-4">{job.title}</h1>
-        
-        <div className="flex flex-wrap gap-6 text-sm text-zinc-600 dark:text-zinc-400 mb-8 pb-8 border-b border-zinc-200 dark:border-zinc-700">
-          <div className="flex items-center gap-2">
-            <Briefcase className="h-5 w-5" />
-            <span className="font-medium text-zinc-900 dark:text-zinc-100">{job.department}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <MapPin className="h-5 w-5" />
-            <span className="font-medium text-zinc-900 dark:text-zinc-100">{job.location}</span>
+    <div className="max-w-4xl mx-auto w-full px-6 py-12 bg-white">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 border-b border-zinc-200 pb-8 mb-8">
+        <div>
+          <h1 className="text-3xl font-medium text-zinc-900 mb-4">{job.title}</h1>
+          <div className="text-sm font-semibold tracking-wide text-zinc-500 uppercase">
+            {job.location} <span className="mx-2">/</span> {job.department} <span className="mx-2">/</span> Full-Time
           </div>
         </div>
+        <Link 
+          href={`/jobs/${job.id}/apply`}
+          className="inline-flex whitespace-nowrap items-center justify-center px-6 py-3 text-sm font-bold tracking-wide text-white transition-colors uppercase"
+          style={{ backgroundColor: '#4278b8' }}
+        >
+          Apply for this job
+        </Link>
+      </div>
 
-        <div className="prose prose-zinc dark:prose-invert max-w-none">
-          <ReactMarkdown>{job.description}</ReactMarkdown>
-        </div>
+      <div className="prose prose-zinc max-w-none prose-headings:font-medium prose-p:text-zinc-600 prose-p:leading-relaxed prose-li:text-zinc-600 mb-16">
+        <ReactMarkdown>{job.description}</ReactMarkdown>
+      </div>
 
-        <div className="mt-10 pt-8 border-t border-zinc-200 dark:border-zinc-700">
-          <Link 
-            href={`/jobs/${job.id}/apply`}
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl transition-colors"
-          >
-            Apply for this position
-          </Link>
-        </div>
+      <div className="border-t border-zinc-200 pt-10 text-center">
+        <Link 
+          href={`/jobs/${job.id}/apply`}
+          className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold tracking-wide text-white transition-colors uppercase"
+          style={{ backgroundColor: '#4278b8' }}
+        >
+          Apply for this job
+        </Link>
       </div>
     </div>
   );
