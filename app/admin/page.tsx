@@ -17,7 +17,12 @@ export default async function AdminDashboard() {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="max-w-7xl mx-auto w-full px-6 py-12">
+      <nav className="flex items-center gap-2 text-sm text-zinc-500 font-medium mb-10">
+        <span className="text-zinc-900">Admin Dashboard</span>
+      </nav>
+
+      <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">Admin Dashboard</h1>
@@ -69,6 +74,8 @@ export default async function AdminDashboard() {
           </tbody>
         </table>
       </div>
+    </div>
+
     </div>
   );
 }

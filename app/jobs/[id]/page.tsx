@@ -20,6 +20,13 @@ export default async function JobDetailsPage({ params }: { params: Promise<{ id:
 
   return (
     <div className="max-w-4xl mx-auto w-full px-6 py-12 bg-white">
+      {/* Breadcrumb */}
+      <nav className="flex items-center gap-2 text-sm text-zinc-500 font-medium mb-10">
+        <Link href="/" className="hover:text-zinc-900 transition-colors">CVEnhance Careers</Link>
+        <span>/</span>
+        <span className="text-zinc-900">{job.title}</span>
+      </nav>
+
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 border-b border-zinc-200 pb-8 mb-8">
         <div>
           <h1 className="text-3xl font-medium text-zinc-900 mb-4">{job.title}</h1>

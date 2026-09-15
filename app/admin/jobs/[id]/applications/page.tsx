@@ -21,10 +21,14 @@ export default async function JobApplicationsPage({ params }: { params: Promise<
   if (!job) return notFound();
 
   return (
-    <div className="space-y-6">
-      <Link href="/admin" className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Back to Dashboard
-      </Link>
+    <div className="max-w-7xl mx-auto w-full px-6 py-12">
+      <nav className="flex items-center gap-2 text-sm text-zinc-500 font-medium mb-10">
+        <Link href="/admin" className="hover:text-zinc-900 transition-colors">Admin Dashboard</Link>
+        <span>/</span>
+        <span className="text-zinc-900">{job.title} - Applications</span>
+      </nav>
+
+      <div className="space-y-6">
       
       <div>
         <h1 className="text-2xl font-bold">Applications</h1>
@@ -87,6 +91,8 @@ export default async function JobApplicationsPage({ params }: { params: Promise<
           </tbody>
         </table>
       </div>
+    </div>
+
     </div>
   );
 }

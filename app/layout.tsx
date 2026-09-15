@@ -36,9 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </a>
             </div>
             
-            <nav className="hidden sm:flex gap-6 text-sm font-semibold text-zinc-600 uppercase tracking-widest">
+            <nav className="hidden sm:flex gap-6 text-sm font-semibold text-zinc-500 uppercase tracking-widest">
               <a href="/" className="hover:text-black transition-colors">Jobs</a>
-              <a href="/admin" className="hover:text-black transition-colors">Admin</a>
             </nav>
           </div>
         </header>
