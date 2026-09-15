@@ -24,19 +24,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50">
-        <header className="flex justify-between items-center p-6 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black">
+        <header className="flex justify-between items-center px-6 py-4 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black">
           <div className="flex items-center gap-6">
             <h1 className="text-xl font-bold">
-              <a href="/">CVEnhance Career</a>
+              <a href="/">CVEnhance Careers</a>
             </h1>
-            <nav className="flex gap-4 text-sm font-medium">
-              <a href="/" className="hover:text-blue-600 transition-colors">Home</a>
-              <a href="/profile" className="hover:text-blue-600 transition-colors">Profile</a>
-              <a href="/apply" className="hover:text-blue-600 transition-colors">Apply</a>
-            </nav>
           </div>
+          <nav className="flex gap-4 text-sm font-medium">
+            <a href="/" className="hover:text-blue-600 transition-colors">Jobs</a>
+            <a href="/admin" className="hover:text-blue-600 transition-colors">Admin</a>
+          </nav>
         </header>
-        <main className="flex-1 flex flex-col">
+        <main className="flex-1 flex flex-col mx-auto w-full max-w-5xl p-6">
           {children}
         </main>
       </body>
