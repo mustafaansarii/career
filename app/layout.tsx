@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="w-full border-b border-zinc-200 bg-white">
           <div className="flex justify-between items-center px-6 py-6 max-w-7xl mx-auto w-full">
             <div className="flex flex-1 items-center justify-center sm:justify-start">
-              <a href="/" className="group flex items-center outline-none hover:opacity-90 transition-opacity">
+              <a href="https://www.cvenhance.in/" className="group flex items-center outline-none hover:opacity-90 transition-opacity">
                 <BrandLogo height={46} />
               </a>
             </div>
