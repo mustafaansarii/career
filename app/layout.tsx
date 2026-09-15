@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-zinc-900 selection:bg-zinc-200">
+      <body className="min-h-full flex flex-col bg-white text-black selection:bg-zinc-200">
         <header className="w-full border-b border-zinc-200 bg-white">
           <div className="flex justify-between items-center px-6 py-6 max-w-7xl mx-auto w-full">
             <div className="flex flex-1 items-center justify-center sm:justify-start">
@@ -36,13 +36,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </a>
             </div>
             
-            <nav className="hidden sm:flex gap-6 text-sm font-semibold text-zinc-500 uppercase tracking-widest">
-              <a href="/" className="hover:text-zinc-900 transition-colors">Jobs</a>
-              <a href="/admin" className="hover:text-zinc-900 transition-colors">Admin</a>
+            <nav className="hidden sm:flex gap-6 text-sm font-semibold text-zinc-600 uppercase tracking-widest">
+              <a href="/" className="hover:text-black transition-colors">Jobs</a>
+              <a href="/admin" className="hover:text-black transition-colors">Admin</a>
             </nav>
           </div>
         </header>
-        <main className="flex-1 flex flex-col w-full bg-white">
+        <main className="flex-1 flex flex-col w-full bg-white text-black">
           {children}
         </main>
       </body>
